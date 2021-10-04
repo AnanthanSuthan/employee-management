@@ -1,0 +1,57 @@
+.example-icon {
+    padding:0 1px;
+  }
+  .example-spacer {
+    margin-left: 14px;
+    flex: 1 1 auto;
+  }
+
+  
+
+.mat-drawer-backdrop.mat-drawer-shown {
+    visibility: visible;
+}
+.mat-drawer-backdrop.mat-drawer-shown {
+    background-color: rgba(189,189,189,.6);
+}
+
+.mat-drawer-backdrop {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    display: block;
+    z-index: 3;
+    visibility: hidden;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+.mat-drawer-container {
+   
+    background-color:aliceblue;
+    color: black;
+}
+
+.mat-sidenav a:hover{
+    color:blue;
+
+}
+
+.mat-elevation-z5{
+  position: relative;
+  z-index: 2;
+
+}
+
+.mat-drawer{
+    margin-top: 0px;
+    background-color: cadetblue;
+    border-radius: 5px;
+    border: 2px solid green;
+
+    padding: 2px; 
+    display: block;
+}

@@ -1,0 +1,92 @@
+
+<div
+class="modal"
+tabindex="-1"
+role="dialog"
+[ngStyle]="{'display':displayStyle}">
+<div class="modal-dialog" role="dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">Your Cart and Shipping Details Updated Successfully </h3>
+    </div>
+    <div class="modal-body">
+      <p>Thank you for your shopping</p>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" 
+              (click)="closePopup()">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+</div> 
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>My Orders</h2>
+
+<!-- view one order -->
+
+
+<ng-container *ngIf="showoneorderstatus">
+  <div>
+    <h1>Order id : {{orderid}}</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">CartID</th>
+          <th scope="col">Item Name</th>
+          <th scope="col">Unit Price</th>
+          <th scope="col">Total Price</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of cartDetails; let i =index">
+              <td>{{item.cartitemid}}</td>
+              <td>{{item.itemname}}</td>
+              <td>{{item.unitprice}}</td>
+              <td>{{item.totalprice}}</td>
+              <td><button type="button" class="btn btn-info" (click)="deleteCartItem(item.cartitemid)">Remove</button></td>
+        
+           
+              </tr>
+      </tbody>
+    </table>
+    
+    </div>
+</ng-container>
+
+
+<!-- end of view one order -->
+
+
+
+            <!-- table -->
+            <ng-container *ngIf="showallorderstatus">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Order id</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of sdetails; let i =index">
+                        <td>{{item.orderid}}</td>
+                        <td><button type="button" class="btn btn-info" (click)="ViewOrder(item.orderid)">View</button>&nbsp;
+                          <button type="button" class="btn btn-danger" (click)="RemoveOrder(item.orderid)">Remove Order</button>
+                        </td>
+                        </tr>
+                </tbody>
+              </table>
+            </ng-container>
+
+            <!-- end of table -->
+        </div>
+    </div>
+</div>

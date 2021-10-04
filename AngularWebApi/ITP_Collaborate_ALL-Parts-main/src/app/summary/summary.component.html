@@ -1,0 +1,75 @@
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Your Cart and Shipping Details added Successfully </h3>
+      </div>
+      <div class="modal-body">
+        <p>Thank you for your shopping</p>
+  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" 
+                (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-4">
+        <h2> Shipping details</h2>
+        <div class="card-table">
+       
+          <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Shipping Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                     {{firstname}} {{lastname}}
+                    </td>
+                </tr>
+                <tr><td>
+                  {{address}}
+                </td></tr>
+                <tr><td>
+                  {{email}}
+                </td></tr>
+                <tr>
+                  <td>
+                    {{contactno}}
+                  </td>
+                </tr>
+            </tbody>
+        </table>  
+        <div class="alert alert-success" role="alert">
+         
+         <button type="button" class="btn btn-info" (click)="changeaddress()">Change address</button> &nbsp;
+         <button type="button" class="btn btn-success" (click)="storeshippingDataandCartData()">Confirm</button>
+        </div>
+          </div>      
+      </div>
+    
+      <div class="col-8" style="border-left: 1px solid black;"> 
+        <h2> Your cart</h2>
+        <app-cartsummary></app-cartsummary>
+      </div>
+    </div>
+  </div>
+ 
